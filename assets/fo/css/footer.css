@@ -200,7 +200,7 @@ ul#icon li {
 
 .pay-horizontal-list{
 	list-style-type: none;
-   	min-width: 696px;
+   	*min-width: 696px;
 	list-style: none;
 	padding-top: 0px;
     *background-color: #ffffff;
@@ -212,7 +212,7 @@ ul#icon li {
 }
 .shipp-horizontal-list{
 	list-style-type: none;
-   	min-width: 696px;
+   	*min-width: 696px;
 	list-style: none;
 	padding-top: 0px;
     *background-color: #ffffff;
