@@ -28,7 +28,7 @@ class Login extends CI_Controller{
 							'first_name'=>$row->first_name,
 							'last_name'=>$row->last_name,
 							'email'=>$row->email,
-							'departemen'=>$row->name_departemen,
+							'departemen'=>$row->name_departement,
 							'code_dep' => $row->code_departement,
 							'photo'=>$row->photo
 					);
