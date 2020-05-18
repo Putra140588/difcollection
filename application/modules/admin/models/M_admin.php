@@ -497,10 +497,9 @@ class M_admin extends CI_Model{
 		$this->db->join('tb_currency as F','A.id_currency = F.id_currency','left');
 		$this->db->join('tb_language as G','A.id_language = G.id_language','left');
 		$this->db->join('tb_product_image as H','A.id_product = H.id_product','left');
-		$this->db->where('H.sort',1);
+		//$this->db->where('H.sort',1);
 		$this->db->where('A.deleted',0);
-		//$this->db->group_by('A.id_city');
-		//$this->db->having('count(*) < ',2);//tidak menampilkan data yg double
+		$this->db->group_by('A.id_product');
 		($where !='') ? $this->db->where($where) : '';
 		if ($column != ''){
 			$columns = $column[$this->column];

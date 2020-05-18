@@ -32,7 +32,13 @@ class M_public extends CI_Model{
 				$img1 = $this->m_client->get_image(array('id_product'=>$id_product,'sort'=>1));			
 				$image1 = isset($img1[0]->image_name) ? image_fo($img1[0]->image_name) : 'no-image.jpg';
 				$img2 = $this->m_client->get_image(array('id_product'=>$id_product,'sort'=>2));
-				$image2 = isset($img2[0]->image_name) ? image_fo($img2[0]->image_name) : image($img1[0]->image_name);
+				$image2='';
+				if (isset($img2[0]->image_name)){
+					$image2 = image_fo($img2[0]->image_name);
+				}else if (isset($img1[0]->image_name)){
+					$image2 = image($img1[0]->image_name);
+				}
+				//$image2 = isset($img2[0]->image_name) ? image_fo($img2[0]->image_name) : image($img1[0]->image_name);
 				$badge='';
 				if ($row->top_seller == 1){
 					$badge = badge('best');

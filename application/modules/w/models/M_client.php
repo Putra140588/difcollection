@@ -215,8 +215,9 @@ class M_client extends CI_Model{
 		$this->db->where('A.active',1);
 		$this->db->where('A.deleted',0);
 		$this->db->where('A.display',1);
-		$this->db->where('C.sort',1);
-		$this->db->where('A.id_language',$this->id_language);			
+		//$this->db->where('C.sort',1);
+		$this->db->where('A.id_language',$this->id_language);		
+		$this->db->group_by('A.id_product');
 		$sql = $this->db->get()->result();
 		return $sql;
 	}
