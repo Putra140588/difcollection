@@ -31,8 +31,8 @@ echo '<table style="width:100%">
 	echo '<table style="width:100%; font-size : 13px">
 				<tr>
 					<td>													
-						<table align="left" style="height:180px; width:100%; border-top:1px solid #b59353">
-							<thead style="background: #b59353; color:white;">
+						<table align="left" style="height:180px; width:100%; border-top:1px solid #fff0ff">
+							<thead style="background: #fff0ff; color:white;">
 								<tr>									
 									<th>'.lang('prodname').'</th>											
 									<th>'.lang('unitprc').'</th>

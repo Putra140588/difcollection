@@ -41,7 +41,7 @@
 			<div style="margin:0 auto;max-width:600px;padding:15px;display:block">
 				<table style="width:100%">
 					<tr>
-						<td><img src="<?php echo $this->session->userdata('url')?>/assets/images/logo/<?php echo $this->session->userdata('logo_company')?>" /></td>
+						<td><img src="https://www.difcollection.id/assets/images/logo/difcollection_logo.PNG" /></td>
 						<td align="right"><h6><?php echo $this->session->userdata('company_name')?></h6></td>
 					</tr>
 				</table>
