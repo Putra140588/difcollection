@@ -177,7 +177,7 @@ class M_client extends CI_Model{
 		
 	}
 	function get_company(){
-		$this->db->select('id_company,company_name,address_company,
+		$this->db->select('id_company,company_name,address_company,url,
 							homephone_company,mobilephone_company,email_company,logo_company');
 		$this->db->from('tb_company');
 		$this->db->where('deleted',0);

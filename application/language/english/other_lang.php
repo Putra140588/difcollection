@@ -225,7 +225,7 @@ $lang['helptxt'] = 'If you have trouble, we provide help regarding the questions
 $lang['privopen'] = 'We take customers privacy seriously and we will only collect and use your personal information as described below.';
 
 $lang['termtxt1'] = 'Welcome to %s! Thank you for visiting our website.';
-$lang['termtxt2'] = 'This page displays Terms and Conditions in accordance with the Products listed on our website www.kaftwholesale.com.';
+$lang['termtxt2'] = 'This page displays Terms and Conditions in accordance with the Products listed on our website %s.';
 $lang['termtxt3'] = 'Please take your time to read these Terms and Conditions before ordering Products from our Site.';
 $lang['termtxt4'] = 'By ordering one of our products, you agree to be bound by these Terms and Conditions.';
 $lang['termtxt5'] = 'You should visit the page periodically to find out any changes we make to our Terms and Conditions.';

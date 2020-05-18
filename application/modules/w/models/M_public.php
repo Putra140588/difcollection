@@ -127,55 +127,117 @@ class M_public extends CI_Model{
 		return $this->product_footer($sql);
 	}	
 	
+	//update putra mei 2020
 	function convert_price($price){			
 		if ($this->session->userdata('iso_code_fo') == 'IDR'){
-			/*
-			 * melakukan pemmotongan dan penambahan nilai ratusan
-			 * 
-			 */
-			$total = $price * $this->rate;//harga USD * rate rupiah
-			/*
-			$ratusan = substr($total, -3);
-			if ($ratusan < 500){
-				//Ex : 18.300 = 18.000
-				$total = $total - $ratusan;
+			$this->db->select('exchange_rate');
+			$this->db->from('tb_currency');
+			$this->db->where('used','bo');
+			$this->db->where('deleted',0);
+			$this->db->where('default',1);
+			$this->db->where('country_code','ID');
+			$currbo = $this->db->get();
+			if ($currbo->num_rows() > 0){
+				//jika default di BO adalah IDR
+				$total = $price;
 			}else{
-				//Ex : 18.700 = 19.000
-				$total = $total + (1000 - $ratusan);
+				/*
+				 * melakukan pemmotongan dan penambahan nilai ratusan
+				 *
+				 */
+				$total = $price * $this->rate;//harga USD * rate rupiah
+				/*
+				 $ratusan = substr($total, -3);
+				 if ($ratusan < 500){
+				 //Ex : 18.300 = 18.000
+				 $total = $total - $ratusan;
+				 }else{
+				 //Ex : 18.700 = 19.000
+				 $total = $total + (1000 - $ratusan);
 				
-			}		
-			*/	
+				 }
+				 */
+			}
+			
 			$result['total'] = $total;
 			$result['format_total'] = number_format($total,0,'.','.');
 		}else{
-			$result['total'] = $price;
-			$result['format_total'] = $price;
+			$this->db->select('exchange_rate');
+			$this->db->from('tb_currency');
+			$this->db->where('used','bo');
+			$this->db->where('deleted',0);
+			$this->db->where('default',1);
+			$this->db->where('country_code','ID');
+			$currbo = $this->db->get();
+			if ($currbo->num_rows() > 0){
+				$total = round($price / $currbo->row()->exchange_rate,2);
+			}else{
+				/*
+				 * melakukan pemmotongan dan penambahan nilai ratusan
+				 *
+				 */
+				$total = $price;
+				
+			}
+			$result['total'] = $total;
+			$result['format_total'] = $total;
 		}		
 		return $result;
 	}
 	function convert_price_shipp($price,$iso_code){
-		if ($iso_code == 'IDR'){
-			/*
-			 * melakukan pemmotongan dan penambahan nilai ratusan
-			*
-			*/
-			$total = $price * $this->rate;//harga USD * rate rupiah
-			
-			$ratusan = substr($total, -3);
-			if ($ratusan < 500){
-				//Ex : 18.300 = 18.000
-				$total = $total - $ratusan;
+		if ($this->session->userdata('iso_code_fo') == 'IDR'){
+			$this->db->select('exchange_rate');
+			$this->db->from('tb_currency');
+			$this->db->where('used','bo');
+			$this->db->where('deleted',0);
+			$this->db->where('default',1);
+			$this->db->where('country_code','ID');
+			$currbo = $this->db->get();
+			if ($currbo->num_rows() > 0){
+				//jika default di BO adalah IDR
+				$total = $price;
+			}else{
+				//jika default di BO adalah USD
+				/*
+					 * melakukan pemmotongan dan penambahan nilai ratusan
+					*
+					*/
+					$total = $price * $this->rate;//harga USD * rate rupiah
+					
+					/* $ratusan = substr($total, -3);
+					if ($ratusan < 500){
+						//Ex : 18.300 = 18.000
+						$total = $total - $ratusan;
+					} */
+					/*
+					else{
+					//Ex : 18.700 = 19.000
+						$total = $total + (1000 - $ratusan);	
+					}*/			
 			}
-			/*
-			else{
-			//Ex : 18.700 = 19.000
-				$total = $total + (1000 - $ratusan);	
-			}*/			
 			$result['total'] = $total;
 			$result['format_total'] = number_format($total,0,'.','.');
 		}else{
-			$result['total'] = $price;
-			$result['format_total'] = $price;
+			//jika session curr di fo adalah USD
+			$this->db->select('exchange_rate');
+			$this->db->from('tb_currency');
+			$this->db->where('used','bo');
+			$this->db->where('deleted',0);
+			$this->db->where('default',1);
+			$this->db->where('country_code','ID');
+			$currbo = $this->db->get();
+			if ($currbo->num_rows() > 0){
+				$total = round($price / $currbo->row()->exchange_rate,2);
+			}else{
+				/*
+				 * melakukan pemmotongan dan penambahan nilai ratusan
+				 *
+				 */
+				$total = $price;
+			
+			}
+			$result['total'] = $total;
+			$result['format_total'] = $total;
 		}
 		return $result;
 	}

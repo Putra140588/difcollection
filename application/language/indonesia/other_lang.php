@@ -228,7 +228,7 @@ $lang['helptxt'] = 'Jika anda mengalami kesulitan, kami sediakan bantuan mengena
 $lang['privopen'] = 'Kami menjaga privasi pelanggan dengan serius dan kami hanya akan mengumpulkan dan menggunakan informasi pribadi Anda seperti uraian di bawah ini.';
 
 $lang['termtxt1'] = 'Selamat datang di %s! Terima kasih telah mengunjungi website kami.';
-$lang['termtxt2'] = 'Halaman ini menampilkan Syarat dan Ketentuan yang sesuai dengan Produk-Produk yang kami tunjukkan (masing-masing adalah "Produk") yang terdaftar di website kami www.kaftwholesale.com ("Situs") kepada Anda ("Persyaratan dan Ketentuan").';
+$lang['termtxt2'] = 'Halaman ini menampilkan Syarat dan Ketentuan yang sesuai dengan Produk-Produk yang kami tunjukkan (masing-masing adalah "Produk") yang terdaftar di website kami %s ("Situs") kepada Anda ("Persyaratan dan Ketentuan").';
 $lang['termtxt3'] = 'Luangkan waktu Anda untuk membaca Syarat dan Ketentuan ini sebelum memesan Produk dari Situs kami.';
 $lang['termtxt4'] = 'Dengan memesan salah satu produk kami, berarti Anda setuju untuk terikat pada Syarat dan Ketentuan ini.';
 $lang['termtxt5'] = 'Anda harus mengunjungi halaman secara berkala untuk mengetahui setiap perubahan yang kami buat dalam Syarat dan Ketentuan kami.';

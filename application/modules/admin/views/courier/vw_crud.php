@@ -55,7 +55,7 @@
 										<div class="form-group required">
 											<label class="control-label col-sm-4 no-padding-right">Can be Payment</label>			
 											<div class="col-sm-8">
-												<select id="pay" class="multiselect" multiple="" name="payment[]">
+												<select id="pay" class="multiselect" multiple="" name="payment[]" required>
 													<?php foreach ($payment as $g){
 														$idpay = isset($idpaymenttype) ? $idpaymenttype : array();
 														$checkgroup = in_array($g->id_payment_type, $idpaymenttype) ? "selected" : "";//used for post data															

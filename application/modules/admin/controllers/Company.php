@@ -42,7 +42,8 @@ class Company extends CI_Controller{
 			$input['mobilephone_company'] =  $this->input->post('mobilephone',true);
 			$input['email_company'] =  $this->input->post('email',true);
 			$input['url'] =  $this->input->post('url',true);
-			$filename = $_FILES['logo']['name'];
+			$filename = isset($_FILES['logo']['name']) ? $_FILES['logo']['name'] : '';
+			
 			if ($filename != '')
 			{
 				//proses upload gambar

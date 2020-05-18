@@ -162,9 +162,6 @@ class Courier extends CI_Controller{
 		$default = (empty($this->input->post('default',true))) ? 0 : 1;
 		$post['default_courier'] = $default;		
 		$payment = $this->input->post('payment',true);
-		foreach ($payment as $id){
-			$batch[] = array_merge(array('id_courier'=>$id_courier),array('id_payment_type'=>$id));
-		}
 		$filename = $_FILES['logo']['name'];
 		if ($filename != '')
 		{
@@ -188,10 +185,13 @@ class Courier extends CI_Controller{
 			$post['add_by']=$this->addby;
 			$res = $this->m_admin->insertdata($this->table,$post);
 			$alert = 'Add new data '.__CLASS__.' successfull';	
-						
+			$id_courier = $this->db->insert_id();						
 		}
 		//insert new payment type
 		if (!empty($payment)){
+			foreach ($payment as $id){
+				$batch[] = array_merge(array('id_courier'=>$id_courier),array('id_payment_type'=>$id));
+			}
 			$res = $this->db->insert_batch('tb_courier_payment',$batch);
 		}
 		if ($this->db->trans_status() === FALSE){

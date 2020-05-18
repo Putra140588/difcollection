@@ -12,7 +12,7 @@
         			<div class="col-md-12">
 						<header class="content-title">
 							<h1 class="title"><?php echo $tab_title?></h1>	
-							<?php echo '<p>'.sprintf(lang('termtxt1'),'<b>'.$this->session->userdata('company_name').'</b>').'</p><p>'.lang('termtxt2').'</p><p>'.lang('termtxt3').'</p><p>'.lang('termtxt4').'</p><p>'.lang('termtxt5').'</p>'?>
+							<?php echo '<p>'.sprintf(lang('termtxt1'),'<b>'.$this->session->userdata('company_name').'</b>').'</p><p>'.sprintf(lang('termtxt2'),'<b>'.$this->session->userdata('url').'</b>').'</p><p>'.lang('termtxt3').'</p><p>'.lang('termtxt4').'</p><p>'.lang('termtxt5').'</p>'?>
 						</header>						
         				<div class="tab-container clearfix">
                                     <ul id="products-tabs-list" class="tab-style-1 clearfix">

@@ -22,7 +22,7 @@
 										<div class="form-group required">
 											<label class="col-sm-4 control-label">Address</label>
 											<div class="col-sm-4">
-												<textarea name="address" placeholder="Address" class="textareas"><?php echo isset($address_company) ? $address_company : ''?></textarea>
+												<textarea name="address" placeholder="Address" id="address" class="textareas"><?php echo isset($address_company) ? $address_company : ''?></textarea>
 											</div>
 										</div>
 										<div class="form-group">

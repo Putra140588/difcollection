@@ -63,6 +63,7 @@
 		<script src="<?php echo base_url()?>assets/js/jquery.form.js"></script>
 		<script src="<?php echo base_url()?>assets/js/jquery.colorbox.min.js"></script>
 		<script src="<?php echo base_url()?>assets/js/bootstrap-multiselect.min.js"></script>
+		<script src="<?php echo base_url()?>assets/ckeditor/ckeditor.js"></script>
 		<script type="text/javascript">
 			jQuery(function($) {				
 				

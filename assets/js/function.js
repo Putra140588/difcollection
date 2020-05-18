@@ -255,7 +255,7 @@ function ajaxform(url,div,form){
 		contentType: false,
 		processData: false,
 		cache	: false,
-		async:false,
+		async	:true,
 		timeout : 600000,
 		success	: function (param)
 		{			
